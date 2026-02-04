@@ -24,7 +24,7 @@ import { AddTextDto, UpdateTextDto, DeleteTextDto } from './dto/text.dto';
   cors: {
     origin: [
       'http://localhost:5173',
-      'https://your-frontend.vercel.app', // ✅ Add after frontend deploy
+      process.env.FRONTEND_URL || 'http://localhost:5173', // ✅ Dynamic
     ],
     credentials: true,
   },
