@@ -22,7 +22,10 @@ import { AddTextDto, UpdateTextDto, DeleteTextDto } from './dto/text.dto';
 
 @WebSocketGateway({
   cors: {
-    origin: 'http://localhost:5173',
+    origin: [
+      'http://localhost:5173',
+      'https://your-frontend.vercel.app', // ✅ Add after frontend deploy
+    ],
     credentials: true,
   },
 })
