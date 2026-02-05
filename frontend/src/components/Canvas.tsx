@@ -31,14 +31,16 @@ const Canvas = forwardRef<HTMLCanvasElement, CanvasProps>(({
   onStrokeEnd,
   onDrawShape,
   onTextClick,
-  onDrawingHistory,
+  // onDrawingHistory,
 }, ref) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isDrawing, setIsDrawing] = useState(false);
   const [context, setContext] = useState<CanvasRenderingContext2D | null>(null);
   const [lastPos, setLastPos] = useState({ x: 0, y: 0 });
   const [shapeStart, setShapeStart] = useState<{ x: number; y: number } | null>(null);
-  const [tempCanvas, setTempCanvas] = useState<HTMLCanvasElement | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // const [tempCanvas, setTempCanvas] = useState<HTMLCanvasElement | null>(null);
+  const [, setTempCanvas] = useState<HTMLCanvasElement | null>(null);
 
   useImperativeHandle(ref, () => canvasRef.current!);
 

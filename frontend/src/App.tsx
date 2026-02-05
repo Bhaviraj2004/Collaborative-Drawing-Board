@@ -25,7 +25,9 @@ function App() {
   const [isInRoom, setIsInRoom] = useState(false);
   const [username, setUsername] = useState("");
   const [roomId, setRoomId] = useState("");
-  const [userId, setUserId] = useState("");
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  // const [userId, setUserId] = useState("");
+  const [, setUserId] = useState("");
   const [userCount, setUserCount] = useState(1);
   const [error, setError] = useState("");
   const [cursors, setCursors] = useState<Record<string, Cursor>>({});
@@ -605,7 +607,7 @@ function App() {
     setCanvasState((prev) => ({ ...prev, brushSize: size }));
   };
 
-  const handleToolChange = (tool: "pen" | "eraser") => {
+  const handleToolChange = (tool: "pen" | "eraser" | "circle" | "rectangle" | "line" | "arrow" | "text") => {
     setCanvasState((prev) => ({ ...prev, tool }));
   };
 
@@ -696,8 +698,9 @@ function App() {
         zoom={zoom}
         onZoomIn={handleZoomIn}
         onZoomOut={handleZoomOut}
-        onResetView={handleResetView}
-      />
+        onResetView={handleResetView} theme={"light"} onToggleTheme={function (): void {
+          throw new Error("Function not implemented.");
+        } }      />
 
       {/* Main canvas wrapper - subtle grid background possible via css */}
       <div

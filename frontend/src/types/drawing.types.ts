@@ -41,12 +41,12 @@ export interface Room {
   userCount?: number;
 }
 
-export interface CanvasState {
-  isDrawing: boolean;
-  currentColor: string;
-  brushSize: number;
-  tool: 'pen' | 'eraser';
-}
+// export interface CanvasState {
+//   isDrawing: boolean;
+//   currentColor: string;
+//   brushSize: number;
+//   tool: 'pen' | 'eraser';
+// }
 
 export interface Cursor {
   userId: string;
